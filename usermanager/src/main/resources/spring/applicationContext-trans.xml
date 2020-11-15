@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd ">
+
+<!--    配置事务管理切面-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+<!--    配置事务的传播行为，就是哪些方法需要收到事务的控制-->
+    <!--            为我们的方法做一些事务属性的设定的-->
+    <!--            name：需要哪些方法做事务控制（增强处理）配置方式1：给定完全方法名（如：addUsersAndOrders)
+                    配置方式2：通过*通配符指定方法名-->
+    <!--            propagation：配置事务传播行为  isolation:事务隔离级别，默认以数据库为准 -->
+    <tx:advice id="advice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="add*" propagation="REQUIRED"/>
+            <tx:method name="modify*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="drop*" propagation="REQUIRED"/>
+            <tx:method name="del*" propagation="REQUIRED"/>
+            <tx:method name="find*" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+<!--        配置切点，哪些类下面的方法需要参与当前的事务管理中，配置切点-->
+   <aop:config>
+       <aop:advisor advice-ref="advice" pointcut="execution(* com.bjsxt.service.*.*(..))"/>
+   </aop:config>
+</beans>

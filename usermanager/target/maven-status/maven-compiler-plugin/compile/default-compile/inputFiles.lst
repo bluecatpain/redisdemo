@@ -1,0 +1,10 @@
+/Users/pain_/IdeaProjects/redisparent/usermanager/src/main/java/com/bjsxt/controller/pageController.java
+/Users/pain_/IdeaProjects/redisparent/usermanager/src/main/java/com/bjsxt/service/impl/UserServiceImpl.java
+/Users/pain_/IdeaProjects/redisparent/usermanager/src/main/java/com/bjsxt/controller/UserController.java
+/Users/pain_/IdeaProjects/redisparent/usermanager/src/main/java/com/bjsxt/jedisdao/impl/JedisDaoImplSingle.java
+/Users/pain_/IdeaProjects/redisparent/usermanager/src/main/java/com/bjsxt/mapper/UsersMapper.java
+/Users/pain_/IdeaProjects/redisparent/usermanager/src/main/java/com/bjsxt/pojo/UsersExample.java
+/Users/pain_/IdeaProjects/redisparent/usermanager/src/main/java/com/bjsxt/jedisdao/JedisDao.java
+/Users/pain_/IdeaProjects/redisparent/usermanager/src/main/java/com/bjsxt/service/UserService.java
+/Users/pain_/IdeaProjects/redisparent/usermanager/src/main/java/com/bjsxt/pojo/Users.java
+/Users/pain_/IdeaProjects/redisparent/usermanager/src/main/java/com/bjsxt/jedisdao/impl/JedisDaoImplCluster.java
